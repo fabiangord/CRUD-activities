@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  database: 
+    image: mysql:8.3.0
+    volumes:
+      - data:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=activitiesDb
+      - MYSQL_USER=fabian
+      - MYSQL_PASSWORD=secret
+      - MYSQL_ROOT_USER=root
+      - MYSQL_ROOT_PASSWORD=secret123
+    ports:
+      - 3306:3306
+
+volumes:
+  data:
